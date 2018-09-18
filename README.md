@@ -92,6 +92,7 @@ These plugins are available:
 - [Plugin: postcards-pexels](#plugin-postcards-pexels)
 - [Plugin: postcards-random](#plugin-postcards-random)
 - [Plugin: postcards-chuck-norris](#plugin-postcards-chuck-norris)
+- [Plugin: postcards-birthday-card](#plugin-birthday-card)
 - [Build your own plugin](#build-your-own-plugin)
 
 ### Plugin: postcards-folder
@@ -157,6 +158,42 @@ No configuration is necessary in your configuration file.
 $ postcards-chuck-norris send --config ./config.json --category nerdy --duplicate-file duplicates.txt
 ```
 - Issue `postcards-chuck-norris send --help` for more information about the additional flags.
+
+### Plugin: postcards-birthday  
+
+Check if it's a friend's birthday in the next few days and send him a birthday postcard. Can be scheduled to run once a day on a pi.
+
+A birthday.json file is required. 
+
+```json
+{
+ "birthdays":[
+   {
+      "birthdate":"07.02.1812",
+      "recipient": {
+        "firstname": "charles",
+        "lastname": "dickons",
+        "street": "48 Doughty St",
+        "zipcode": "WC1N 2LX",
+        "city": "London"
+      },
+    }
+  ],
+  "wishes":[
+      "Happy Birthday",
+      "Tanti Auguri",
+      "Hoffe hesch ä super Tag"
+  ]
+}
+```
+
+- `days-ahead`: number of days early postcards will be sent
+
+
+#### Example
+```
+$ postcards-birthday send --birthdays ./birthday.json --days-ahead 3
+```
 
 ### Build your own plugin
 1. Extend the class `postcards.Postcards()`
