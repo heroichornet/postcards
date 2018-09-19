@@ -25,6 +25,7 @@ postcards-folder
 postcards-pexels
 postcards-random
 postcards-chuck-norris
+postcards-birthdays
 ```
 Issue `--help` for more information.
 
@@ -52,13 +53,13 @@ sourcecode and documentation: https://github.com/abertschi/postcards
 ```
 
 ## Getting started
-Create a configuration file by issuing 
+Create a configuration file by issuing
 ```bash
 $ postcards generate
 ```
-A [configuration file](./postcards/template_config.json) 
+A [configuration file](./postcards/template_config.json)
 holds various information relevant to send postcards.
- 
+
 ### Examples
 Issue `postcards send --help` for more information about sending postcards.
 
@@ -81,10 +82,10 @@ $ postcards send --config config.json \
 ```
 
 ## Plugins
-Postcards is designed in a plugin based approach. 
+Postcards is designed in a plugin based approach.
 Plugins set the text and / or picture of your postcards.
 
-Postcard pictures and text can always be overwritten by commandline by issuing 
+Postcard pictures and text can always be overwritten by commandline by issuing
 `--picture <picutre>` and `--message <message>`.
 
 These plugins are available:
@@ -92,7 +93,7 @@ These plugins are available:
 - [Plugin: postcards-pexels](#plugin-postcards-pexels)
 - [Plugin: postcards-random](#plugin-postcards-random)
 - [Plugin: postcards-chuck-norris](#plugin-postcards-chuck-norris)
-- [Plugin: postcards-birthday-card](#plugin-birthday-card)
+- [Plugin: postcards-birthdays](#plugin-birthdays)
 - [Build your own plugin](#build-your-own-plugin)
 
 ### Plugin: postcards-folder
@@ -132,7 +133,7 @@ $ postcards-pexels send --config ./config.json --message "coding rocks"
 ```
 
 ### Plugin: postcards-random  
-Surprise, surprise! This plugin chooses an arbitrary picture from the 
+Surprise, surprise! This plugin chooses an arbitrary picture from the
 internet as postcard picture.
 Picture may be inappropriate, so use with caution.
 
@@ -159,11 +160,11 @@ $ postcards-chuck-norris send --config ./config.json --category nerdy --duplicat
 ```
 - Issue `postcards-chuck-norris send --help` for more information about the additional flags.
 
-### Plugin: postcards-birthday  
+### Plugin: postcards-birthdays  
 
 Check if it's a friend's birthday in the next few days and send him a birthday postcard. Can be scheduled to run once a day on a pi.
 
-A birthday.json file is required. 
+A birthday.json file is required.
 
 ```json
 {
@@ -211,10 +212,10 @@ class MyPlugin(Postcards):
             'img': '...',
             'text': '...'
         }
-        
+
 if __name__ == '__main__':
     MyPlugin().main(sys.argv[1:])
-        
+
 ```
 ```sh
 $ python my_plugin.py --help
