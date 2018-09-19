@@ -35,7 +35,7 @@ class PostcardsRandom(Postcards):
         parser.add_argument('--safe-search', default=False, action='store_true',
                             help='enable safe search')
 
-    def get_img_and_text(self, plugin_config, cli_args):
+    def get_img_text_recipient(self, plugin_config, cli_args):
         imgs = []
         enable_safe_search = True if cli_args.safe_search else False
         self.logger.debug('setting image safe search to {}'.format(enable_safe_search))

@@ -126,12 +126,14 @@ class Postcards:
                   message=None, picture_stream=None, cli_args={}):
 
         if self._is_plugin():
-            img_and_text = self.get_img_and_text(plugin_payload, cli_args=cli_args if cli_args else {})
+            img_text_recipient = self.get_img_text_recipient(plugin_payload, cli_args=cli_args if cli_args else {})
 
             if not message:
-                message = img_and_text['text']
+                message = img_text_recipient['text']
             if not picture_stream:
-                picture_stream = img_and_text['img']
+                picture_stream = img_text_recipient['img']
+            if not recipient:
+                recipient = img_text_recipient['recipient']
 
         card = postcard_creator.Postcard(message=message,
                                          recipient=self._create_recipient(recipient),

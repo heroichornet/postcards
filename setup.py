@@ -42,6 +42,7 @@ setup(
                             'postcards-folder=postcards.plugin_folder.postcards_folder:main',
                             'postcards-pexels=postcards.plugin_pexels.postcards_pexels:main',
                             'postcards-random=postcards.plugin_random.postcards_random:main',
-                            'postcards-chuck-norris=postcards.plugin_chuck_norris.postcards_chuck_norris:main'],
+                            'postcards-chuck-norris=postcards.plugin_chuck_norris.postcards_chuck_norris:main',
+                            'postcards-birthdays=postcards.plugin_birthdays.postcards_birthdays:main'],
     }
 )

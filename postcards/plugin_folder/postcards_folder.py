@@ -43,7 +43,7 @@ class PostcardsFolder(Postcards):
                                   type=int,
                                   help='tile height')
 
-    def get_img_and_text(self, payload, cli_args):
+    def get_img_text_recipient(self, payload, cli_args):
         if not payload.get('folder'):
             self.logger.error("no folder set in configuration")
             exit(1)

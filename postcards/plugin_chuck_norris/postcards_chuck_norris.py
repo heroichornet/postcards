@@ -24,7 +24,7 @@ class PostcardsChuckNorris(Postcards):
         parser.add_argument('--duplicate-file', default=None, type=str,
                             help='avoid sending the same joke twice by setting a file which stores already sent jokes')
 
-    def get_img_and_text(self, plugin_payload, cli_args):
+    def get_img_text_recipient(self, plugin_payload, cli_args):
         jokes = self._read_jokes()
 
         if cli_args.category:

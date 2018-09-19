@@ -1,0 +1,19 @@
+{
+ "birthdays":[
+   {
+      "birthdate":"07.02.1812",
+      "recipient": {
+        "firstname": "charles",
+        "lastname": "dickens",
+        "street": "48 Doughty St",
+        "zipcode": "WC1N 2LX",
+        "city": "London"
+      }
+  }
+  ],
+  "wishes":[
+      "Happy Birthday",
+      "Tanti Auguri",
+      "Hoffe hesch ä super Tag"
+  ]
+}
